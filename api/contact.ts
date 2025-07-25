@@ -12,7 +12,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (!name || !email || !message) {
       return res.status(400).json({ error: "All fields are required" });
     }
-
+alert('i am called');
     // Log the contact form submission
     console.log('=== VERCEL CONTACT FORM SUBMISSION ===');
     console.log('Name:', name);
