@@ -1,9 +1,8 @@
 {
-  "buildCommand": "npm run build:client",
+  "buildCommand": "vite build",
   "outputDirectory": "dist/spa",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
- 
   "rewrites": [
     {
       "source": "/api/(.*)",
