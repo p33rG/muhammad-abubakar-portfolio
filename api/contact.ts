@@ -27,10 +27,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
       // Create transporter with Gmail SMTP
       const transporter = nodemailer.default.createTransporter({
-        service: 'gmail',
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false, // true for 465, false for other ports
         auth: {
-          user: 'bkrmalik3@gmail.com',
-          pass: 'vmws gbfq ntgk slct' // App password
+          user: process.env.EMAIL_USER || 'bkrmalik3@gmail.com',
+          pass: process.env.EMAIL_PASS || 'vmws gbfq ntgk slct' // App password
+        },
+        tls: {
+          rejectUnauthorized: false
         }
       });
 
